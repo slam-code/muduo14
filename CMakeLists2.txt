@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.6)
+project(tmuduo)
+
+set(CMAKE_BUILD_TYPE "Debug")
+
+ADD_DEFINITIONS(-DDMUDUO_LOG_TRACE)
+
+#[[
+set(CMAKE_BUILD_TYPE "Release")
+set(CMAKE_CXX_COMPILER "g++")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -o3  ")]]
+
+#set(CMAKE_CXX_COMPILER "g++")
+set(CMAKE_C_COMPILER "/usr/bin/clang")
+set(CMAKE_CXX_COMPILER "clang++")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -o1  -pg")#gprof
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -g -libc++ -libc++abi")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -g -stdlib=libc++ -lc++abi")
+
+
+
+
+add_executable(thread_test thread_test.cpp)
+
+add_executable(move_vector_size move_vector_size.cpp)
+
+
+
+
+add_executable(String String_test.cpp String.cpp gtest-all.cpp)
+add_executable(CString_test CString_test.cpp)
+
+

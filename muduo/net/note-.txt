@@ -1,0 +1,4 @@
+%ld 表示输出 64位长整数(long long)
+%zd 表示输出size_t 整数
+size_t在c99里面 与机器相关的unsigned类型比如 size-t在32位系统下是4个字节 64位下是8个字节
+就是unsigned int 的增强版（可以适应编译环境）
